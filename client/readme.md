@@ -47,4 +47,4 @@ npm run build
 ## View Code
 ... Jusu aprasymas, su nuoroda i repozitorijos koda (****.dev***) ---
 
-To view the full code, go to repository ***[link](https://github.com/Spickeyy/react-crud)***
+To view the full code, go to repository ***[link](https://github.dev/Spickeyy/react-crud)***
