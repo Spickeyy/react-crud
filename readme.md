@@ -12,13 +12,17 @@ Make sure you lauched Server application first, only then Client.
 <div style="padding-left: 40px">
 
 ### Installation
-VĖLIAU
+Open terminal in __./server__ folder and run: 
 
-### Launch for development
-VĖLIAU
+```bash
+npm install
+```
 
-### Launch for production
-VĖLIAU
+### Launch
+Open terminal in __./server__ folder and run:
+```bash
+npm run server
+``` 
 </div>
 
 ## Launching Client application
@@ -26,18 +30,19 @@ VĖLIAU
 <div style="padding-left: 40px">
 
 ### Installation
-Open terminal in __./client__ folder and run 
+Open terminal in __./client__ folder and run:
 ```bash
 npm install
 ```
 
 ### Launch for development
-Open terminal in __./client__ folder and run 
+Open terminal in __./client__ folder and run:
 ```bash
 npm start
 ```
 
 ### Launch for production
+Open terminal in __./client__ folder and run:
 ```bash
 npm run build
 ```
