@@ -1,22 +1,48 @@
 # React CRUD App
+This is an CodeAcademy React CRUD application exam;
 
 ## System requirements
-... Jusu apraymas ---
+* [Node.js](https://nodejs.org/en/) v16 or later
+  
+To view application, you must launch server and client apps.
+Make sure you lauched Server application first, only then Client.
 
-To view applications, you must launch server and client apps
-Make sure you launched server application first, only then Client.
 
-## Launching Server applications
-... VELIAU
+## Launching Server application
+<div style="padding-left: 40px">
 
-## Lanching Client applications
-... JUSU APRASYMAS ---
+### Installation
+VĖLIAU
 
-## Installation
-... You need to install node.js, MUI library, vite.config and eslint to able to start a server. ---
+### Launch for development
+VĖLIAU
 
 ### Launch for production
-...
+VĖLIAU
+</div>
+
+## Launching Client application
+
+<div style="padding-left: 40px">
+
+### Installation
+Open terminal in __./client__ folder and run 
+```bash
+npm install
+```
+
+### Launch for development
+Open terminal in __./client__ folder and run 
+```bash
+npm start
+```
+
+### Launch for production
+```bash
+npm run build
+```
+</div>
+
 
 ## View Code
 ... Jusu aprasymas, su nuoroda i repozitorijos koda (****.dev***) ---
