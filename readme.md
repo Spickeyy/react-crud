@@ -51,4 +51,4 @@ npm run build
 
 ## View Code
 
-To view the full code, go to repository ***[link](https://github.dev/Spickeyy/react-crud)***
+To view the full code, go to repository ***[here](https://github.dev/Spickeyy/react-crud)***
