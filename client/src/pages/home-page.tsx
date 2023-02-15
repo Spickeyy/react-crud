@@ -1,6 +1,7 @@
 import React from 'react';
-import { Box } from '@mui/material';
 import ApiService from 'services/api-service';
+import MovieCard from './movie-card';
+import * as Styled from './styled';
 
 const HomePage = () => {
   const [movies, setMovies] = React.useState<MovieModel[]>([]);
@@ -13,11 +14,9 @@ const HomePage = () => {
   }, []);
 
   return (
-    <Box>
-      <Box component="pre">
-        {JSON.stringify(movies, null, 4)}
-      </Box>
-    </Box>
+    <Styled.MovieCardGrid>
+      {movies.map((movie) => <MovieCard key={movie.id} {...movie} />)}
+    </Styled.MovieCardGrid>
   );
 };
 
