@@ -15,8 +15,15 @@ const fetchMovies = async () => {
   return data;
 };
 
+const fetchMovie = async (id: string | number) => {
+  const { data } = await api.get<MovieModel>(`/movies/${id}`);
+
+  return data;
+};
+
 const ApiService = {
   fetchMovies,
+  fetchMovie,
 };
 
 export default ApiService;
