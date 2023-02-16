@@ -6,6 +6,7 @@ const routes = {
     routePath: `${MoviePagePath}:id`,
     createLink: (id: string | number) => `${MoviePagePath}${id}`,
   },
+  MovieCreatePage: '/movie-create-page',
 } as const;
 
 export type Routes = typeof routes;

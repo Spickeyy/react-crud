@@ -4,6 +4,7 @@ import NavbarLayout from 'components/layout/navbar-layout';
 import HomePage from 'pages/home-page';
 import MoviePage from 'pages/movie-page';
 import routes from './routes';
+import MovieCreatePage from '../pages/movie-create-page';
 
 const router = createBrowserRouter([
   {
@@ -17,6 +18,10 @@ const router = createBrowserRouter([
       {
         path: routes.MoviePage.routePath,
         element: <MoviePage />,
+      },
+      {
+        path: routes.MovieCreatePage,
+        element: <MovieCreatePage mode="create" />,
       },
     ],
   },

@@ -1,9 +1,32 @@
 import React from 'react';
-import { Box } from '@mui/material';
+import { Box, Button } from '@mui/material';
+import AddIcon from '@mui/icons-material/Add';
+import routes from 'navigation/routes';
+import { useNavigate } from 'react-router-dom';
 
-const Header = () => (
+const Header = () => {
+  const navigate = useNavigate();
 
-  <Box component="header" sx={{ bgcolor: 'red' }}>Header</Box>
-);
+  return (
+
+    <Box
+      component="header"
+      display="flex"
+      justifyContent="center"
+      alignItems="flex-end"
+      sx={{ py: 3 }}
+    >
+      <Button
+        variant="contained"
+        color="primary"
+        size="large"
+        onClick={() => navigate(routes.MovieCreatePage)}
+      >
+        <AddIcon />
+        ADD Movie
+      </Button>
+    </Box>
+  );
+};
 
 export default Header;

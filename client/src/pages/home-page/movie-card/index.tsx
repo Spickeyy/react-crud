@@ -8,6 +8,8 @@ import Img from 'components/ui/img';
 import routes from 'navigation/routes';
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import DeleteIcon from '@mui/icons-material/Delete';
+import FavoriteIcon from '@mui/icons-material/Favorite';
 import * as Styled from './styled';
 
   type MovieCardProps = MovieModel;
@@ -30,10 +32,10 @@ const MovieCard: React.FC<MovieCardProps> = ({
       <Img src={images[0]} alt="" sx={{ aspectRatio: '1.42', width: 1 }} />
       <Styled.AdminActions>
         <Button variant="contained" color="warning" size="small">
-          Update
+          UPDATE
         </Button>
         <Button variant="contained" color="error" size="small">
-          Delete
+          <DeleteIcon />
         </Button>
       </Styled.AdminActions>
       <Styled.ContentWrapper>
@@ -50,10 +52,13 @@ const MovieCard: React.FC<MovieCardProps> = ({
         </Box>
 
         <Styled.ButtonContainer>
-          <Button color="success" variant="outlined">Favorite</Button>
+          <Button color="success" variant="outlined" size="small">
+            <FavoriteIcon />
+          </Button>
           <Button
             color="primary"
             variant="contained"
+            size="small"
             onClick={() => navigate(routes.MoviePage.createLink(id))}
           >
             View INFO
