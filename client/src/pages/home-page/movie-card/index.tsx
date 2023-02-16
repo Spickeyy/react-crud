@@ -23,9 +23,21 @@ const MovieCard: React.FC<MovieCardProps> = ({
   const navigate = useNavigate();
 
   return (
-    <Stack sx={{ boxShadow: 3, borderRadius: 1, overflow: 'hidden' }}>
+    <Stack sx={{
+      boxShadow: 3, borderRadius: 1, overflow: 'hidden', position: 'relative', borderColor: 'primary.main',
+    }}
+    >
       <Img src={images[0]} alt="" sx={{ aspectRatio: '1.42', width: 1 }} />
+      <Styled.AdminActions>
+        <Button variant="contained" color="warning" size="small">
+          Update
+        </Button>
+        <Button variant="contained" color="error" size="small">
+          Delete
+        </Button>
+      </Styled.AdminActions>
       <Styled.ContentWrapper>
+
         <Box sx={{ flexGrow: 1 }}>
           <Box sx={{ float: 'right', textAlign: 'right' }}>
             <Box sx={{ fontSize: '1.3rem', color: 'primary.main', fontWeight: 600 }}>{price}</Box>
@@ -38,7 +50,7 @@ const MovieCard: React.FC<MovieCardProps> = ({
         </Box>
 
         <Styled.ButtonContainer>
-          <Button color="secondary" variant="outlined">Favorite</Button>
+          <Button color="success" variant="outlined">Favorite</Button>
           <Button
             color="primary"
             variant="contained"
