@@ -73,7 +73,7 @@ const HouseCreatePage: React.FC<MovieCreatePageProps> = () => (
               fullWidth
               variant="filled"
               InputProps={{
-                endAdorment: (
+                endAdornment: (
                   <InputAdornment position="end">
                     <IconButton>
                       <RemoveIcon color="error" />
