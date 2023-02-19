@@ -1,44 +1,33 @@
 import React from 'react';
 import {
   Stack,
-  Paper,
   Typography,
   TextField,
   Box,
   IconButton,
-  InputAdornment,
+  Button,
 } from '@mui/material';
 import AddCircleIcon from '@mui/icons-material/AddCircle';
-import RemoveIcon from '@mui/icons-material/Remove';
 import EditLocationIcon from '@mui/icons-material/EditLocation';
 import AddPhotoAlternateIcon from '@mui/icons-material/AddPhotoAlternate';
+import ImagesField from './images-field';
+import LocationField from './location-field';
+import * as Styled from './styled';
 
 type MovieCreatePageProps = {
   mode?: 'create' | 'edit'
 };
 
 const HouseCreatePage: React.FC<MovieCreatePageProps> = () => (
-  <Stack sx={{
-    p: 2,
-    py: { xs: 2, sm: 4, lg: 6 },
-
-    alignItems: 'center',
-  }}
-  >
-    <Paper
-      elevation={10}
-      component="form"
-      sx={(theme) => ({
-        p: { xs: 2, lg: 3 },
-        width: { sm: `calc(${theme.breakpoints.values.sm}px - ${theme.spacing(4)})` },
-      })}
-    >
+  <Styled.Container>
+    <Styled.PaperForm elevation={10}>
       <Typography
-        variant="h5"
+        variant="h4"
         sx={{ textAlign: 'center' }}
       >
         ADD A MOVIE
       </Typography>
+
       <Stack sx={{ gap: 2, mt: 2 }}>
         <TextField label="Title" fullWidth variant="filled" />
         <Typography
@@ -52,9 +41,8 @@ const HouseCreatePage: React.FC<MovieCreatePageProps> = () => (
           Location
 
         </Typography>
-        <Box sx={{ }}>
-          <TextField label="Country" fullWidth variant="filled" />
-        </Box>
+        <LocationField />
+
         <Typography
           variant="subtitle1"
           sx={{ pl: 1 }}
@@ -66,32 +54,33 @@ const HouseCreatePage: React.FC<MovieCreatePageProps> = () => (
           Images
 
         </Typography>
-        <Box sx={{ }}>
-          <Stack sx={{ gap: 2 }}>
-            <TextField
-              label="Image 1"
-              fullWidth
-              variant="filled"
-              InputProps={{
-                endAdornment: (
-                  <InputAdornment position="end">
-                    <IconButton>
-                      <RemoveIcon color="error" />
-                    </IconButton>
-                  </InputAdornment>
-                ),
-              }}
-            />
-            <TextField label="Image 2" fullWidth variant="filled" />
-            <TextField label="Image 3" fullWidth variant="filled" />
-          </Stack>
-        </Box>
+
+        <ImagesField />
+
         <IconButton>
           <AddCircleIcon color="success" sx={{ fontSize: 35 }} />
         </IconButton>
+
+        <Box sx={{ display: 'flex', gap: 2 }}>
+          <TextField label="Price" fullWidth variant="filled" />
+          <TextField label="Rating" fullWidth variant="filled" />
+        </Box>
+
+        <Stack alignItems="center" sx={{ mt: 2 }}>
+          <Button
+            type="submit"
+            color="primary"
+            variant="contained"
+            size="large"
+          >
+            Create
+
+          </Button>
+        </Stack>
+
       </Stack>
-    </Paper>
-  </Stack>
+    </Styled.PaperForm>
+  </Styled.Container>
 );
 
 export default HouseCreatePage;
