@@ -21,7 +21,12 @@ export const Container = styled(Stack)(({ theme }) => ({
   },
 }));
 
-const Form = (props: Omit<PaperProps<'form'>, 'component'>) => <MuiPaper component="form" {...props} />;
+const Form = React.forwardRef(
+  (
+    props: Omit<PaperProps<'form'>, 'component' | 'ref'>,
+    ref: PaperProps<'form'>['ref'],
+  ) => <MuiPaper component="form" ref={ref} {...props} />,
+);
 
 export const PaperForm = styled(Form)(({ theme }) => ({
   padding: theme.spacing(3),
