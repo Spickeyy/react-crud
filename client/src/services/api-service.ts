@@ -21,6 +21,10 @@ const fetchMovie = async (id: string | number) => {
   return data;
 };
 
+const deleteMovie = async (id: string) => {
+  await api.delete(`movies/${id}`);
+};
+
 const createMovie = async (movieData: Omit<MovieModel, 'id'>) => {
   await api.post('/movies', {
     title: movieData.title,
@@ -31,10 +35,6 @@ const createMovie = async (movieData: Omit<MovieModel, 'id'>) => {
     price: movieData.price,
     rating: movieData.rating,
   });
-};
-
-const deleteMovie = async (id: string) => {
-  await api.delete(`movies/${id}`);
 };
 
 const ApiService = {

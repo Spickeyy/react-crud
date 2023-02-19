@@ -12,8 +12,24 @@ import AddCircleIcon from '@mui/icons-material/AddCircle';
 
 const initImagesIds: string[] = [uniqid()];
 
-const ImagesField = () => {
-  const [imagesIds, setImagesIds] = React.useState<string[]>(initImagesIds);
+type ImagesFieldProps = {
+  defaultImages?: string[]
+};
+
+const ImagesField: React.FC<ImagesFieldProps> = ({
+  defaultImages,
+}) => {
+  const imgMap = React.useMemo(() => (defaultImages !== undefined
+    ? defaultImages.reduce<{ [key in string]: string }>((prevMap, defaultImg) => ({
+      ...prevMap,
+      [uniqid()]: defaultImg,
+    }), {})
+    : undefined), [defaultImages]);
+
+  const [imagesIds, setImagesIds] = React.useState<string[]>(imgMap !== undefined
+
+    ? Object.keys(imgMap)
+    : initImagesIds);
 
   const addImageField = () => setImagesIds([...imagesIds, uniqid()]);
   const removeImageField = (id: string) => setImagesIds(imagesIds.filter((imgId) => imgId !== id));
@@ -21,7 +37,7 @@ const ImagesField = () => {
   return (
     <Box sx={{ }}>
       <Stack sx={{ gap: 2 }}>
-        {imagesIds.map((id) => (
+        {imagesIds.map((id, i) => (
           <TextField
             required
             key={id}
@@ -29,6 +45,7 @@ const ImagesField = () => {
             label="Image"
             fullWidth
             variant="filled"
+            defaultValue={defaultImages && defaultImages[i]}
             InputProps={imagesIds.length > 1 ? {
               endAdornment: (
                 <InputAdornment position="end">

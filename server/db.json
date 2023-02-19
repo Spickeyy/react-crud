@@ -15,6 +15,34 @@
       "rating": 7.9
     },
     {
+      "id": "2",
+      "title": "Avatar",
+      "location": {
+        "country": "USA"
+      },
+      "images": [
+        "https://image.cnbcfm.com/api/v1/image/105897632-1557241558937avatar-e1541360922907.jpg?v=1664130328&w=740&h=416&ffmt=webp&vtcrop=y",
+        "https://media-cldnry.s-nbcnews.com/image/upload/t_fit-1240w,f_auto,q_auto:best/rockcms/2022-11/avatar-mc-221123-02-78d2b5.jpg",
+        "https://www.usmagazine.com/wp-content/uploads/2022/04/The-Way-of-Water.jpg?w=1600&quality=86&strip=all"
+      ],
+      "price": "2,899,384,102€",
+      "rating": 7.9
+    },
+    {
+      "id": "3",
+      "title": "Avatar: The Way of Water",
+      "location": {
+        "country": "USA"
+      },
+      "images": [
+        "https://static01.nyt.com/images/2022/12/13/multimedia/13avatar-fx-1-3a70/13avatar-fx-1-3a70-superJumbo.jpg?quality=75&auto=webp",
+        "https://hips.hearstapps.com/hmg-prod/images/avatar-the-way-of-water-1670943667.jpeg?crop=0.999383096853794xw:1xh;center,top&resize=1200:*",
+        "https://www.hollywoodreporter.com/wp-content/uploads/2022/11/2363A_0070_v0550.1080K.jpg?w=1296&h=730&crop=1"
+      ],
+      "price": "2,207,986,545€",
+      "rating": 7.8
+    },
+    {
       "id": "4",
       "title": "The Nice Guys",
       "location": {
@@ -96,7 +124,7 @@
         "https://www.dolby.com/siteassets/xf-site/content-detail-pages/dune_in_dolby_poster.jpg"
       ],
       "price": "392,073,640€",
-      "rating": 8
+      "rating": 8.0
     },
     {
       "id": "10",
@@ -138,7 +166,7 @@
         "https://cdn.theatlantic.com/thumbor/KZhFwMpFlppo4v7f1boC2m4JDwo=/0x0:5466x3075/1952x1098/media/img/mt/2022/03/https_cdn.sanity.io_images_xq1bjtf4_production_65f9a0af7f43991ea4887b8ddf1fa11efbe29eb0_5466x3075/original.jpg"
       ],
       "price": "106,879,147€",
-      "rating": 8
+      "rating": 8.0
     }
   ]
 }

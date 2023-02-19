@@ -34,7 +34,12 @@ const MovieCard: React.FC<MovieCardProps> = ({
     >
       <Img src={images[0]} alt="" sx={{ aspectRatio: '1.42', width: 1 }} />
       <Styled.AdminActions>
-        <Button variant="contained" color="warning" size="small">
+        <Button
+          variant="contained"
+          color="warning"
+          size="small"
+          onClick={() => navigate(routes.MovieUpdatePage.createLink(id))}
+        >
           UPDATE
         </Button>
         <Button variant="contained" color="error" size="small" onClick={onDelete}>

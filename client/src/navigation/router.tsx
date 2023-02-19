@@ -21,7 +21,11 @@ const router = createBrowserRouter([
       },
       {
         path: routes.MovieCreatePage,
-        element: <MovieCreatePage mode="create" />,
+        element: <MovieCreatePage />,
+      },
+      {
+        path: routes.MovieUpdatePage.routePath,
+        element: <MovieCreatePage mode="update" />,
       },
     ],
   },

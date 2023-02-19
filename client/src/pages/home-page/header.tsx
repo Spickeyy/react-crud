@@ -23,7 +23,7 @@ const Header = () => {
         onClick={() => navigate(routes.MovieCreatePage)}
       >
         <AddIcon />
-        ADD Movie
+        ADD A Movie
       </Button>
     </Box>
   );

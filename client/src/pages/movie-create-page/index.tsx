@@ -9,44 +9,22 @@ import {
 } from '@mui/material';
 import EditLocationIcon from '@mui/icons-material/EditLocation';
 import AddPhotoAlternateIcon from '@mui/icons-material/AddPhotoAlternate';
+import useMovie from 'hooks/useMovie';
+import { useParams } from 'react-router-dom';
 import ImagesField from './images-field';
 import LocationField from './location-field';
 import * as Styled from './styled';
-
-const formatValues = (form: HTMLFormElement) => {
-  const formData = new FormData(form);
-
-  const title = formData.get('title');
-  const price = formData.get('price');
-  const rating = formData.get('rating');
-  const images = formData.getAll('images');
-  const country = formData.get('country');
-
-  if (title == null || title instanceof File || title.length < 2) throw new Error('incorrect Title');
-  if (price == null || price instanceof File || price.length < 1) throw new Error('incorrect Price');
-  if (rating == null || rating instanceof File || rating.length < 1) throw new Error('incorrect Rating');
-  if (country == null || country instanceof File || country.length < 2) throw new Error('incorrect Country');
-  images.forEach((img, i) => {
-    if (img instanceof File || img.length < 2) throw new Error(`incorrect Image nr: ${i + 1}`);
-  });
-
-  return {
-    title,
-    location: {
-      country,
-    },
-    images: images as string[],
-    price: `${Number(price).toFixed(2)}€`,
-    rating: Number(rating),
-  };
-};
+import { btnColorMap, btnMap, titleMap } from './data';
+import { formatValues } from './helpers';
 
 type MovieCreatePageProps = {
-  mode?: 'create' | 'edit'
+  mode?: 'create' | 'update'
 };
 
-const HouseCreatePage: React.FC<MovieCreatePageProps> = () => {
+const MovieCreatePage: React.FC<MovieCreatePageProps> = ({ mode = 'create' }) => {
   const formRef = React.useRef<HTMLFormElement | null>(null);
+  const { id } = useParams();
+  const movie = useMovie(id);
 
   const handleSubmit: React.FormEventHandler<HTMLFormElement> = (event) => {
     event.preventDefault();
@@ -54,11 +32,20 @@ const HouseCreatePage: React.FC<MovieCreatePageProps> = () => {
 
     try {
       const values = formatValues(formRef.current);
+      if (mode === 'create') {
+        console.log('Daromas sukurimas');
+        console.log(values);
+      } else {
+        console.log('Daromas Atnaujinimas, id:', id);
+        console.log(values);
+      }
       console.log(values);
     } catch (error) {
       alert(error instanceof Error ? error.message : error);
     }
   };
+
+  if (mode === 'update' && movie === undefined) return null;
 
   return (
     <Styled.Container>
@@ -67,11 +54,18 @@ const HouseCreatePage: React.FC<MovieCreatePageProps> = () => {
           variant="h4"
           sx={{ textAlign: 'center' }}
         >
-          ADD A MOVIE
+          {titleMap[mode]}
         </Typography>
 
         <Stack sx={{ gap: 2, mt: 2 }}>
-          <TextField label="Title" fullWidth variant="filled" name="title" required />
+          <TextField
+            label="Title"
+            fullWidth
+            variant="filled"
+            name="title"
+            required
+            defaultValue={movie?.title}
+          />
           <Typography
             variant="subtitle1"
             sx={{ pl: 1 }}
@@ -83,7 +77,7 @@ const HouseCreatePage: React.FC<MovieCreatePageProps> = () => {
             Location
 
           </Typography>
-          <LocationField />
+          <LocationField defaultCountry={movie?.location.country} />
 
           <Typography
             variant="subtitle1"
@@ -97,7 +91,7 @@ const HouseCreatePage: React.FC<MovieCreatePageProps> = () => {
 
           </Typography>
 
-          <ImagesField />
+          <ImagesField defaultImages={movie?.images} />
 
           <TextField
             label="Price"
@@ -107,20 +101,21 @@ const HouseCreatePage: React.FC<MovieCreatePageProps> = () => {
             type="number"
             inputProps={{ step: '0.01' }}
             required
+            defaultValue={movie?.price.slice(0, -1)}
           />
           <Box>
             <Typography component="legend">Movie Rating</Typography>
-            <Rating name="rating" />
+            <Rating name="rating" defaultValue={movie?.rating} />
           </Box>
 
           <Stack alignItems="center" sx={{ mt: 2 }}>
             <Button
               type="submit"
-              color="primary"
+              color={btnColorMap[mode]}
               variant="contained"
               size="large"
             >
-              Create
+              {btnMap[mode]}
 
             </Button>
           </Stack>
@@ -131,4 +126,4 @@ const HouseCreatePage: React.FC<MovieCreatePageProps> = () => {
   );
 };
 
-export default HouseCreatePage;
+export default MovieCreatePage;
