@@ -12,7 +12,9 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import * as Styled from './styled';
 
-  type MovieCardProps = MovieModel;
+  type MovieCardProps = MovieModel & {
+    onDelete: VoidFunction,
+  };
 
 const MovieCard: React.FC<MovieCardProps> = ({
   id,
@@ -21,6 +23,7 @@ const MovieCard: React.FC<MovieCardProps> = ({
   price,
   rating,
   title,
+  onDelete,
 }) => {
   const navigate = useNavigate();
 
@@ -34,7 +37,7 @@ const MovieCard: React.FC<MovieCardProps> = ({
         <Button variant="contained" color="warning" size="small">
           UPDATE
         </Button>
-        <Button variant="contained" color="error" size="small">
+        <Button variant="contained" color="error" size="small" onClick={onDelete}>
           <DeleteIcon />
         </Button>
       </Styled.AdminActions>
