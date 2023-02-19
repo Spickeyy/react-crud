@@ -1,6 +1,48 @@
 {
   "movies": [
     {
+      "id": "1",
+      "title": "Titanic",
+      "location": {
+        "country": "USA"
+      },
+      "images": [
+        "https://deadline.com/wp-content/uploads/2021/02/MCDTITA_FE014.jpg?w=681&h=383&crop=1",
+        "https://static-koimoi.akamaized.net/wp-content/new-galleries/2023/01/james-cameron-explains-the-door-situation-in-titanic-while-talking-about-the-debate-whether-it-was-possible-to-save-jack-01.jpg",
+        "https://cst.brightspotcdn.com/dims4/default/dad6125/2147483647/strip/true/crop/3424x2283+0+298/resize/1680x1120!/format/webp/quality/90/?url=https%3A%2F%2Fcdn.vox-cdn.com%2Fthumbor%2F_mcXuZPHFwDiKLyiKGICkhVVGB0%3D%2F0x0%3A3424x4500%2F3424x4500%2Ffilters%3Afocal%281832x1439%3A1833x1440%29%2Fcdn.vox-cdn.com%2Fuploads%2Fchorus_asset%2Ffile%2F24412063%2FFilm_Titanic_3_D.JPG"
+      ],
+      "price": "1,843,478,449€",
+      "rating": 7.9
+    },
+    {
+      "id": "2",
+      "title": "Avatar",
+      "location": {
+        "country": "USA"
+      },
+      "images": [
+        "https://image.cnbcfm.com/api/v1/image/105897632-1557241558937avatar-e1541360922907.jpg?v=1664130328&w=740&h=416&ffmt=webp&vtcrop=y",
+        "https://media-cldnry.s-nbcnews.com/image/upload/t_fit-1240w,f_auto,q_auto:best/rockcms/2022-11/avatar-mc-221123-02-78d2b5.jpg",
+        "https://www.usmagazine.com/wp-content/uploads/2022/04/The-Way-of-Water.jpg?w=1600&quality=86&strip=all"
+      ],
+      "price": "2,899,384,102€",
+      "rating": 7.9
+    },
+    {
+      "id": "3",
+      "title": "Avatar: The Way of Water",
+      "location": {
+        "country": "USA"
+      },
+      "images": [
+        "https://static01.nyt.com/images/2022/12/13/multimedia/13avatar-fx-1-3a70/13avatar-fx-1-3a70-superJumbo.jpg?quality=75&auto=webp",
+        "https://hips.hearstapps.com/hmg-prod/images/avatar-the-way-of-water-1670943667.jpeg?crop=0.999383096853794xw:1xh;center,top&resize=1200:*",
+        "https://www.hollywoodreporter.com/wp-content/uploads/2022/11/2363A_0070_v0550.1080K.jpg?w=1296&h=730&crop=1"
+      ],
+      "price": "2,207,986,545€",
+      "rating": 7.8
+    },
+    {
       "id": "4",
       "title": "The Nice Guys",
       "location": {
@@ -23,11 +65,10 @@
       "images": [
         "https://upload.wikimedia.org/wikipedia/en/c/c6/The_Last_Samurai.jpg",
         "https://www.hollywoodreporter.com/wp-content/uploads/2018/10/the_last_samurai_-_h_-_2003.png?w=1296&h=730&crop=1",
-        "https://gaijinpot.scdn3.secure.raxcdn.com/app/uploads/sites/4/2015/04/last-samurai-1024x576.jpg",
-        "https://www.telegraph.co.uk/content/dam/films/2020/08/24/TELEMMGLPICT000000112778_trans_NvBQzQNjv4BqqGw_8_YqFn6oOhW46YSWn_it3MgTyKyFqOcCTVvI9p4.jpeg?imwidth=960"
+        "https://gaijinpot.scdn3.secure.raxcdn.com/app/uploads/sites/4/2015/04/last-samurai-1024x576.jpg"
       ],
-      "price": "380099.97€",
-      "rating": 2
+      "price": "456,810,575€",
+      "rating": 7.8
     },
     {
       "id": "6",
@@ -83,7 +124,7 @@
         "https://www.dolby.com/siteassets/xf-site/content-detail-pages/dune_in_dolby_poster.jpg"
       ],
       "price": "392,073,640€",
-      "rating": 8
+      "rating": 8.0
     },
     {
       "id": "10",
@@ -125,19 +166,7 @@
         "https://cdn.theatlantic.com/thumbor/KZhFwMpFlppo4v7f1boC2m4JDwo=/0x0:5466x3075/1952x1098/media/img/mt/2022/03/https_cdn.sanity.io_images_xq1bjtf4_production_65f9a0af7f43991ea4887b8ddf1fa11efbe29eb0_5466x3075/original.jpg"
       ],
       "price": "106,879,147€",
-      "rating": 8
-    },
-    {
-      "title": "Tron",
-      "location": {
-        "country": "USA"
-      },
-      "images": [
-        "https://static01.nyt.com/images/2010/12/05/arts/TRON-span/TRON-SUB-jumbo.jpg?quality=75&auto=webp"
-      ],
-      "price": "50000000.00€",
-      "rating": 5,
-      "id": "PRtuh4-"
+      "rating": 8.0
     }
   ]
 }

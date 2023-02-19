@@ -19,14 +19,14 @@ const MovieCard: React.FC<MovieCardProps> = ({
   title,
 }) => (
   <Stack sx={{
-    boxShadow: 3,
+    boxShadow: 4,
     borderRadius: 1,
     overflow: 'hidden',
     position: 'absolute',
     borderColor: 'primary.main',
   }}
   >
-    <Img src={images[0]} alt="" sx={{ aspectRatio: '1.90', width: 1 }} />
+    <Img src={images[0]} alt="" sx={{ aspectRatio: '3.00', width: 1 }} />
     <Styled.AdminActions />
     <Styled.ContentWrapper>
 
@@ -43,8 +43,8 @@ const MovieCard: React.FC<MovieCardProps> = ({
             {rating}
           </Styled.Rating>
         </Box>
-        <Typography component="h2" sx={{ fontWeight: 600, fontSize: '1.2rem' }}>{title}</Typography>
-        <Typography component="h3" sx={{ color: 'grey.500', fontSize: '1.1rem' }}>
+        <Typography component="h2" sx={{ fontWeight: 600, fontSize: '1.8rem' }}>{title}</Typography>
+        <Typography component="h3" sx={{ fontWeight: 600, color: 'inherit', fontSize: '1.3rem' }}>
           Country:
           {' '}
           {`${location.country}`}

@@ -1,4 +1,8 @@
-import { Stack, Box, styled } from '@mui/material';
+import {
+  Stack,
+  Box,
+  styled,
+} from '@mui/material';
 
 export const ContentWrapper = styled(Stack)(({ theme }) => ({
   flexGrow: 1,
