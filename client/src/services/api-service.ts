@@ -28,9 +28,17 @@ const deleteMovie = async (id: string) => {
 const createMovie = async (movieData: Omit<MovieModel, 'id'>) => {
   await api.post('/movies', {
     title: movieData.title,
-    location: {
-      country: movieData.location,
-    },
+    location: movieData.location,
+    images: movieData.images,
+    price: movieData.price,
+    rating: movieData.rating,
+  });
+};
+
+const updateMovie = async (id: string, movieData: Omit<MovieModel, 'id'>) => {
+  await api.patch(`/movies/${id}`, {
+    title: movieData.title,
+    location: movieData.location,
     images: movieData.images,
     price: movieData.price,
     rating: movieData.rating,
@@ -42,6 +50,7 @@ const ApiService = {
   fetchMovie,
   deleteMovie,
   createMovie,
+  updateMovie,
 };
 
 export default ApiService;

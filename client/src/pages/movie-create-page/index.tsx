@@ -1,4 +1,5 @@
 import React from 'react';
+import routes from 'navigation/routes';
 import {
   Stack,
   Typography,
@@ -10,7 +11,8 @@ import {
 import EditLocationIcon from '@mui/icons-material/EditLocation';
 import AddPhotoAlternateIcon from '@mui/icons-material/AddPhotoAlternate';
 import useMovie from 'hooks/useMovie';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
+import ApiService from 'services/api-service';
 import ImagesField from './images-field';
 import LocationField from './location-field';
 import * as Styled from './styled';
@@ -23,8 +25,28 @@ type MovieCreatePageProps = {
 
 const MovieCreatePage: React.FC<MovieCreatePageProps> = ({ mode = 'create' }) => {
   const formRef = React.useRef<HTMLFormElement | null>(null);
+
+  const navigate = useNavigate();
   const { id } = useParams();
   const movie = useMovie(id);
+
+  const newMovie = async (movieData: Omit<MovieModel, 'id'>) => {
+    try {
+      await ApiService.createMovie(movieData);
+      navigate(routes.HomePage);
+    } catch (error) {
+      alert(error);
+    }
+  };
+
+  const updateMovie = async (movieId: string, movieData: Omit<MovieModel, 'id'>) => {
+    try {
+      await ApiService.updateMovie(movieId, movieData);
+      navigate(routes.HomePage);
+    } catch (error) {
+      alert(error);
+    }
+  };
 
   const handleSubmit: React.FormEventHandler<HTMLFormElement> = (event) => {
     event.preventDefault();
@@ -35,9 +57,11 @@ const MovieCreatePage: React.FC<MovieCreatePageProps> = ({ mode = 'create' }) =>
       if (mode === 'create') {
         console.log('Daromas sukurimas');
         console.log(values);
-      } else {
-        console.log('Daromas Atnaujinimas, id:', id);
+        newMovie(values);
+      } else if (id) {
+        console.log('upgrade, id:', id);
         console.log(values);
+        updateMovie(id, values);
       }
       console.log(values);
     } catch (error) {
